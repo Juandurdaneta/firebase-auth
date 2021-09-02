@@ -21,57 +21,168 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Firebase Auth</title>
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Firebase Auth </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="login"
+              data-mdb-toggle="modal"
+              data-mdb-target="#loginModal"
+              href="#"
+              >Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+              data-mdb-toggle="modal"
+              data-mdb-target="#signUpModal"
+              href="#"
+              id="signup"
+              >Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="logout">Log out</a>
+            </li>
+           
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
     <section class="vh-100 bg-image" style="background-image: url('https://images.unsplash.com/photo-1581249967776-91651af9f770?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1788&q=80');">
-        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-          <div class="container h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div class="card" style="border-radius: 15px;">
-                  <div class="card-body p-5">
-                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-      
-                    <form id="signUpForm">
-                      <!-- MAIL -->
-                      <div class="form-outline mb-4">
-                        <input type="email" id="email" class="form-control form-control-lg" name="email" />
-                        <label class="form-label" for="email">Your Email</label>
-                        <div class="invalid-feedback" id="email-feedback">Password does not match.</div>
-                      </div>
-                      <!-- PASSWORD -->
-                      <div class="form-outline mb-4">
-                        <input type="password" id="password" class="form-control form-control-lg" name="password"/>
-                        <label class="form-label" for="password">Password</label>
-                        <div class="invalid-feedback" id="password-feedback">Password does not match.</div>
-                      </div>
-                      <!-- CONFIRM PASSWORD -->
-                      <div class="form-outline mb-4">
-                        <input type="password" id="confirm-password" class="form-control form-control-lg" name="confirm-password"/>
-                        <label class="form-label" for="confirm-password">Repeat your password</label>
-                        <div class="invalid-feedback">Password does not match.</div>
-                      </div>
-      
-      
-                      <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                      </div>
-      
-                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
-      
-                    </form>
-      
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="container h-100 p-5 text-center">
+            
+
+          </div>
           </div>
         </div>
       </section>
 
+ <!-- Sign up modal -->
+      <div
+  class="modal fade"
+  id="signUpModal"
+  tabindex="-1"
+  aria-labelledby="signUpModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button
+        type="button"
+        class="btn-close"
+        data-mdb-dismiss="modal"
+        aria-label="Close"
+      ></button>
+        <h2 class="text-center mb-3">Create an account</h2>
+      
+        <form id="signUpForm" class="needs-validation" novalidate>
+          <!-- MAIL -->
+          <div class="form-outline mb-4">
+            <input type="email" class="form-control form-control-lg" name="email" />
+            <label class="form-label" for="email">Your Email</label>
+            <div class="invalid-feedback" id="email-feedback"></div>
+          </div>
+          <!-- PASSWORD -->
+          <div class="form-outline mb-4">
+            <input type="password" class="form-control form-control-lg" name="password"/>
+            <label class="form-label" for="password">Password</label>
+            <div class="invalid-feedback" id="password-feedback"></div>
+          </div>
+          <!-- CONFIRM PASSWORD -->
+          <div class="form-outline mb-4">
+            <input type="password" class="form-control form-control-lg" name="confirm-password"/>
+            <label class="form-label" for="confirm-password">Repeat your password</label>
+            <div class="invalid-feedback">Password does not match.</div>
+          </div>
+
+
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+          </div>
+
+
+        </form>
+
+
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+ <!-- Log In Modal -->
+ <div
+ class="modal fade"
+ id="loginModal"
+ tabindex="-1"
+ aria-labelledby="logInModalLabel"
+ aria-hidden="true"
+>
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-body">
+       <button
+       type="button"
+       class="btn-close"
+       data-mdb-dismiss="modal"
+       aria-label="Close"
+     ></button>
+       <h2 class="text-center mb-3">Log in to your account</h2>
+     
+       <form id="loginForm" class="needs-validation" novalidate>
+         <!-- MAIL -->
+         <div class="form-outline mb-4">
+           <input type="email" class="form-control form-control-lg" name="email" />
+           <label class="form-label" for="email">Your Email</label>
+           <div class="invalid-feedback" id="email-feedback"></div>
+         </div>
+         <!-- PASSWORD -->
+         <div class="form-outline mb-4">
+           <input type="password" class="form-control form-control-lg" name="password"/>
+           <label class="form-label" for="password">Password</label>
+           <div class="invalid-feedback" id="password-feedback"></div>
+         </div>
+       
+
+         <div class="d-flex justify-content-center">
+           <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Log In</button>
+         </div>
+
+
+       </form>
+
+
+
+     </div>
+     
+   </div>
+ </div>
+</div>
   
     <!-- MDB -->
     <script
