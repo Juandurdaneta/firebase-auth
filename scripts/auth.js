@@ -49,6 +49,7 @@ signUpForm.addEventListener('submit', (e)=>{
             })
             register_modal.toggle();
             signUpForm.reset();
+            location.reload();
 
         })
 
@@ -94,7 +95,6 @@ loginForm.addEventListener('submit', (e)=>{
     const password = loginForm['password'].value;
 
     auth.signInWithEmailAndPassword(email, password).then(cred =>{
-        location.reload();
         // closing the modal and resetting the form
         login_modal.toggle();
         loginForm.reset();
