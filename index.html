@@ -44,14 +44,14 @@
           <ul class="navbar-nav">
 
             <li class="nav-item">
-              <a class="nav-link" href="#" id="login"
+              <a class="nav-link d-none" href="#" id="login"
               data-mdb-toggle="modal"
               data-mdb-target="#loginModal"
               href="#"
               >Log In</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" 
+              <a class="nav-link d-none" 
               data-mdb-toggle="modal"
               data-mdb-target="#signUpModal"
               href="#"
@@ -59,10 +59,13 @@
               >Sign Up</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Account</a>
+              <a class="nav-link d-none" 
+              data-mdb-toggle="modal"
+              data-mdb-target="#accountModal"
+              href="#" id="account" >Account</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="logout">Log out</a>
+              <a class="nav-link d-none" href="#" id="logout" >Log out</a>
             </li>
            
            
@@ -100,6 +103,12 @@
         <h2 class="text-center mb-3">Create an account</h2>
       
         <form id="signUpForm" class="needs-validation" novalidate>
+            <!-- USERNAME -->
+            <div class="form-outline mb-4">
+              <input type="text" class="form-control form-control-lg" name="name" id="name" />
+              <label class="form-label" for="name">Username</label>
+              <div class="invalid-feedback" id="email-feedback"></div>
+            </div>
           <!-- MAIL -->
           <div class="form-outline mb-4">
             <input type="email" class="form-control form-control-lg" name="email" />
@@ -184,6 +193,38 @@
  </div>
 </div>
   
+
+ <!-- Account modal -->
+ <div
+ class="modal fade"
+ id="accountModal"
+ tabindex="-1"
+ aria-labelledby="accountModalLabel"
+ aria-hidden="true"
+>
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-body">
+       <button
+       type="button"
+       class="btn-close"
+       data-mdb-dismiss="modal"
+       aria-label="Close"
+     ></button>
+       <h2 class="text-center mb-4">Account details</h2>
+       <section id="account-details" class="p-2">
+         <p id="accountUsername"></p>
+         <p id="accountMail"></p>
+         <p id="accountDate"></p>
+       </section>
+
+
+     </div>
+     
+   </div>
+ </div>
+</div>
+
     <!-- MDB -->
     <script
     type="text/javascript"
