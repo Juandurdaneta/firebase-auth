@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500&display=swap');
+
+body{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+#main-section{
+    padding: 3%;
+}
+
+.login100-form{
+    width: 290px;
+}
+
+#signUpForm{
+    padding: 2% 7%;
+}
+
+.btn-success{
+    background-color: #74c69d;
+    color:#081c15;
+}
+.btn-success:hover{
+    background-color: #40916c;
+    color:#d8f3dc;
+}
