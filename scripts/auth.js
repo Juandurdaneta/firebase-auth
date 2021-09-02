@@ -98,6 +98,12 @@ loginForm.addEventListener('submit', (e)=>{
         // closing the modal and resetting the form
         login_modal.toggle();
         loginForm.reset();
+    }) 
+    .catch((error)=>{
+        if(error){
+            loginForm['password'].classList.add("is-invalid");
+            document.getElementById("invalid-log").innerHTML  = error.message;
+        }
     })
 })
 
